@@ -84,11 +84,18 @@
   </div>
 
   <script>
+
+    let buffer = [];
+
     // Search on enter key event
     function search(e) {
-      if (e.keyCode == 13) {
+      if (e.code == "Enter") {
         var val = document.getElementById("search-field").value;
-        window.open("https://www.startpage.com/do/search?q=" + val, "_self");
+        if (buffer.includes('Shift')) {
+          window.open(val, "_self");
+        } else {
+          window.open("https://startpage.com/do/search?q=" + val, "_self");
+        }
       }
     }
     // Get current time and format
@@ -139,15 +146,25 @@
     };
 
     document.addEventListener("keydown", event => {
-      if (event.keyCode == 32) {
+
+      if (event.code == "Space") {
         // Spacebar code to open search
         document.getElementById("search").style.display = "flex";
         document.getElementById("search-field").focus();
-      } else if (event.keyCode == 27) {
+        lastKeyTime = Date.now()
+      } else if (event.code == "CapsLock" || event.code == "Escape") {
         // Esc to close search
         document.getElementById("search-field").value = "";
         document.getElementById("search-field").blur();
         document.getElementById("search").style.display = "none";
+      } else if (event.code == "ShiftLeft" || "ShiftRight") {
+        buffer.push("Shift");
+
+        if (Date.now() - lastKeyTime > 200) {
+          buffer = [];
+        }
+
+        lastKeyTime = Date.now()
       }
     });
   </script>
