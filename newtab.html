@@ -84,14 +84,11 @@
   </div>
 
   <script>
-
-    let buffer = [];
-
     // Search on enter key event
     function search(e) {
       if (e.code == "Enter") {
         var val = document.getElementById("search-field").value;
-        if (buffer.includes('Ctrl')) {
+        if (e.ctrlKey) {
           window.open(val, "_self");
         } else {
           window.open("https://startpage.com/do/search?q=" + val, "_self");
@@ -157,15 +154,8 @@
         document.getElementById("search-field").value = "";
         document.getElementById("search-field").blur();
         document.getElementById("search").style.display = "none";
-      } else if (event.code == "Ctrl") {
-        buffer.push(event.code);
-
-        if (Date.now() - lastKeyTime > 200) {
-          buffer = [];
-        }
-
-        lastKeyTime = Date.now()
       }
+
     });
   </script>
 </body>
