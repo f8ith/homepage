@@ -2,12 +2,12 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
 
 :root {
-  --bg: #2E3440;
-  --fg: #ECEFF4;
-  --secondaryFg: #d8dee9;
-  --containerBg: #4c566a;
-  --searchBg: var(--containerBg);
-  --scrollbarColor: #3f3f3f;
+  --bg: #12171b;
+  --fg: #b8a5a8;
+  --secondaryFg: #b8a5a8;
+  --containerBg: #7E615E;
+  --searchBg: var(--bg);
+  --scrollbarColor: #b8a5a8;
 }
 
 body {
