@@ -2,12 +2,12 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
 
 :root {
-  --bg: #12171b;
-  --fg: #b8a5a8;
-  --secondaryFg: #b8a5a8;
-  --containerBg: #7E615E;
+  --bg: #2e3440;
+  --fg: #eceff4;
+  --secondaryFg: #eceff4;
+  --containerBg: #4c566a;
   --searchBg: var(--bg);
-  --scrollbarColor: #b8a5a8;
+  --scrollbarColor: #2e3440;
 }
 
 body {
@@ -118,19 +118,19 @@ body {
   box-sizing: border-box;
 
   scrollbar-width: thin;
-  scrollbar-color: var(--scrollbarColor) #ffffff00;
+  scrollbar-color: var(--scrollbarColor);
 }
 
 .bookmark-inner-container::-webkit-scrollbar {
   width: 6px;
 }
 .bookmark-inner-container::-webkit-scrollbar-track {
-  background: #ffffff00;
+  background: #4c556a;
 }
 .bookmark-inner-container::-webkit-scrollbar-thumb {
   background-color: var(--scrollbarColor);
   border-radius: 6px;
-  border: 3px solid #ffffff00;
+  border: 3px solid #3b4252;
 }
 
 .bookmark-title {
